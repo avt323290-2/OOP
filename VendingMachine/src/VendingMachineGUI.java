@@ -32,18 +32,18 @@ public class VendingMachineGUI extends JFrame {
     private void initUI() {
         // Создаем панель для списка продуктов
         JPanel productPanel = new JPanel(new BorderLayout());
-        productPanel.add(new JLabel("Products:"), BorderLayout.NORTH);
+        productPanel.add(new JLabel("Продукты:"), BorderLayout.NORTH);
         productList = new JList<Product>(vendingMachine.getProdAll().toArray(new Product[0]));
         productPanel.add(productList, BorderLayout.CENTER);
 
         // Создаем панель для ввода наличности
         JPanel cashPanel = new JPanel(new BorderLayout());
-        cashPanel.add(new JLabel("Cash:"), BorderLayout.WEST);
+        cashPanel.add(new JLabel("Наличные:"), BorderLayout.WEST);
         cashField = new JTextField();
         cashPanel.add(cashField, BorderLayout.CENTER);
 
         // Создаем кнопку "Купить товар"
-        JButton buyButton = new JButton("Buy");
+        JButton buyButton = new JButton("Оплатить");
         buyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
