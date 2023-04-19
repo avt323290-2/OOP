@@ -43,4 +43,8 @@ public class VendingMachine {
         return products;
     }
 
+    public String buy(Product selectedProduct, int cash) {
+        return null;
+    }
+
 }
