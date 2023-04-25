@@ -6,36 +6,43 @@
 */
 package Classes;
 
+/**
+ * Класс PromoClient описывает акционного клиента.
+ */
 public class PromoClient extends OrdinaryClient {
     private static int promoClientId = 0;
     private String promoName;
+
     /**
      * Конструктор класса PromoClient.
-     * @param name Имя промо-клиента.
-     * @param promoName Название промо-акции.
+     * @param name Имя клиента.
+     * @param promoName Название акции.
      */
     public PromoClient(String name, String promoName) {
         super(name);
         this.promoName = promoName;
         promoClientId++;
     }
+
     /**
-     * Метод-геттер для идентификатора промо-клиента.
-     * @return Идентификатор промо-клиента.
+     * Метод для получения номера клиента в акции.
+     * @return Номер клиента в акции.
      */
     public static int getPromoClientId() {
         return promoClientId;
     }
+
     /**
-     * Метод-геттер для названия промо-акции.
-     * @return Название промо-кампании.
+     * Метод для получения названия акции.
+     * @return Название акции.
      */
     public String getPromoName() {
         return promoName;
     }
+
     /**
-     * Метод-сеттер для названия промо-кампании.
-     * @param promoName Новое название промо-кампании.
+     * Метод для установки названия акции.
+     * @param promoName Название акции.
      */
     public void setPromoName(String promoName) {
         this.promoName = promoName;
