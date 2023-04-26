@@ -14,7 +14,7 @@ public class App {
        iActorBehaviour item4 = new OrdinaryClient("Митин Дмитрий" + " -");
        iActorBehaviour item5 = new SpecialClient("Сергеев Алексей" + " - Vip", 1221);
        iActorBehaviour item6 = new OrdinaryClient("Корнилова Татьяна" + " -");
-       iActorBehaviour item7 = new PromotionalClient("Турко Елена" + " -", 1333);
+       iActorBehaviour item7 = new PromotionalClient("Турко Елена" + " - Promo", 1333);
 
        market.acceptToMarket(item1);
        market.acceptToMarket(item2);
