@@ -7,58 +7,76 @@
 */
 package Classes;
 
+/** класс Обычный клиент */
 public class OrdinaryClient extends Actor {
-/**
- * Создает новый объект OrdinaryClient с указанным именем.
- * @param name имя клиента
- */
+
+    /**
+     * Базовый конструктор класса
+     * @param name Имя
+     */
     public OrdinaryClient(String name)
     {
         super(name);
     }
-/**
- * Возвращает имя объекта OrdinaryClient.
- * @return имя объекта OrdinaryClient
- */
+
+    /** Переопределение метода для получение Имени */
     @Override
     public String getName() {        
         return super.name;
     }
-/**
-*  Метод, который устанавливает значение логической переменной isMakeOrder, которая указывает, делает ли клиент заказ.
-*/
+
+    /** переопределение метода: покупатель сделал ли заказ */
     @Override
     public boolean isMakeOrder() {
         return super.isMakeOrder;
     }
-/**
-* Метод, который возвращает значение логической переменной isTakeOrder, которая указывает, получил ли клиент заказ.
-*/
+
+    /** переопределение метода:  забрал ли заказ покупатель*/
     @Override
     public boolean isTakeOrder() {
         return super.isTakeOrder;
     }
-/**
-* Метод, который устанавливает значение логической переменной isMakeOrder, которая указывает, делает ли клиент заказ. 
-*/
+    
+    /** Сеттер. переопределение метода : покупатель сделал заказ  */
     @Override
     public void setMakeOrder(boolean makeOrder) {
        super.isMakeOrder = makeOrder;
     }
-/**
-* Метод, который устанавливает значение логической переменной isTakeOrder, которая указывает, получил ли клиент заказ. 
-*/
+
+    /** Сеттер.перопределение метода: покупатель получил заказ */
     @Override
     public void setTakeOrder(boolean pickUpOrder) {
        super.isTakeOrder = pickUpOrder;   
     }
-/*
-*  Метод, который возвращает объект Actor, используемый для идентификации клиента.
-*/
+
+    /** переопределение метода: получить */
     @Override
     public Actor getActor() {
         return this;
     }
 
+    /** переопределение метода: есть ли заявка от покупателя на возврат товара */
+    @Override
+    public boolean isMakeReturnOrder() {
+        return super.isMakeReturnOrder;
+    }
+
+    /* переопределение метода забрал ли деньги покупатель*/
+    @Override
+    public boolean isTakeCash() {
+        return super.isTakeCash;
+    }
+
+    /* переопределение метода: покупатель сделал заявку на возврат */
+    @Override
+    public void setMakeReturnOrder(boolean makeReturnOrder) {
+        super.isMakeReturnOrder = makeReturnOrder;
+    }
+
+    /* переопределение метода: покупатель забрад деньги */
+    @Override
+    public void setTakeCash(boolean takeCash) {
+        super.isTakeCash = takeCash;
+    }
     
 }
