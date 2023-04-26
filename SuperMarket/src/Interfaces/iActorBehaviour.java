@@ -1,6 +1,9 @@
 /**
 Этот интерфейс определяет поведение покупателя в супермаркете.
+* @author [Смирнов Михаил]
+* @version 1.0
 */
+
 package Interfaces;
 
 import Classes.Actor;

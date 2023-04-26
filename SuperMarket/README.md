@@ -1,18 +1,14 @@
-## Getting Started
+## Урок 2. Принципы ООП Абстракция и интерфейсы. Пример проектирования
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-## Folder Structure
+### Задача 1.
 
-The workspace contains two folders by default, where:
+1. Добавить класс, описывающий акционного клиента. Включить поле название акции и номер клиента в акции(поле статическое)
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### Задача 2.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+2. Добавить интерфейс iReturnOrder возврата товара. Продумать какие методы могут понадобиться и подключить интерфейс к классам клиентов.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Задача 3.
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+3. Добавить комментарии(javadoc) ко всем методам и интерфейсам.

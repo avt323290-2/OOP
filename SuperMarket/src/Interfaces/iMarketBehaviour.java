@@ -1,6 +1,9 @@
 /**
 * Этот интерфейс определяет поведение супермаркета.
+* @author [Смирнов Михаил]
+* @version 1.0
 */
+
 package Interfaces;
 
 import java.util.List;
