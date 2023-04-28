@@ -1,47 +1,63 @@
 package StudentDomen;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Comparable<StudentGroup> {
     private List<Student> students;
+    private String groupName;
 
-    public StudentGroup(List<Student> students) {
-        this.students = students;
+    public StudentGroup(String groupName) {
+        this.students = new ArrayList<>();
+        this.groupName = groupName;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public StudentGroup(String string, List<Student> of) {
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void addStudent(Student student) {
+        this.students.add(student);
     }
 
-    // @Override
-    // public Iterator<Student> iterator() {
-    //     return new StudentGroupIterator(students);
-    // }
+    public void removeStudent(Student student) {
+        this.students.remove(student);
+    }
+
+    public int getNumberOfStudents() {
+        return this.students.size();
+    }
+
+    public String getGroupName() {
+        return this.groupName;
+    }
 
     @Override
-    public Iterator<Student> iterator() {
-        return new Iterator<Student>(){
-            private int index = 0;
-            @Override
-            public boolean hasNext() {
-               return index<students.size();
-            }
-            @Override
-            public Student next() {
-                if(!hasNext())
-                {
-                    return null;
-                }
-                //counter++;
-                return students.get(index++);        
-            }
-
-        };
+    public int compareTo(StudentGroup o) {
+        return Integer.compare(this.getNumberOfStudents(), o.getNumberOfStudents());
     }
-    
+
+    public void sort() {
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return s1.getSurname().compareTo(s2.getSurname());
+            }
+        });
+    }
+
+    public void printStudents() {
+        for (Student student : students) {
+            System.out.println(student.getName() + " " + student.getSurname());
+        }
+    }
+
+    public String getSize() {
+        return null;
+    }
+
+    public StudentGroupIterator getIterator() {
+        return null;
+    }
 }
