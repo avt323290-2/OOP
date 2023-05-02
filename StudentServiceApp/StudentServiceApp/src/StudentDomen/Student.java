@@ -3,9 +3,9 @@ package StudentDomen;
 public class Student extends User implements Comparable<Student>{
     private long studentID;
 
-    public Student(int i, String secondName, String string, String string2) {
-        super(i, secondName, string);
-        this.studentID = string2;
+    public Student(String firstName, String secondName, int age, long studentID) {
+        super(firstName, secondName, age);
+        this.studentID = studentID;
     }
 
 
@@ -50,10 +50,5 @@ public class Student extends User implements Comparable<Student>{
             return -1;
          }   
          return 1;
-    }
-
-
-    public String getFullName() {
-        return null;
     }
 }

@@ -27,7 +27,4 @@ public class EmploeeController implements iUserController<Emploee> {
         sum=sum/num.length;
         return sum;
     }
-
-    public static void processEmploee(Emploee emploee) {
-    }
 }
