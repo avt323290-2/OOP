@@ -134,6 +134,8 @@ public class Controller {
         return !students.isEmpty();
     }
 
+    // метод выбора языка
+
     // метод вывода студентов через блок view
     public void updateView() {
         getAllStudents();
@@ -145,7 +147,7 @@ public class Controller {
     }
     
 
-    // метод, запускающий взаимодействие с пользователем
+    // метод, который запускает взаимосвязь с пользователем
     public void run() {
         Commands com = Commands.NONE;
         boolean getNewIteration = true;

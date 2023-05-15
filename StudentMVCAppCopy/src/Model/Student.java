@@ -1,8 +1,18 @@
 package Model;
-
+/**
+ * Класс Student представляет сущность студента и наследуется от класса User. Реализует интерфейс Comparable для сравнения студентов.
+ */
 public class Student extends User implements Comparable<Student>{
     private long studentID;
-
+    /**
+     * Конструктор класса Student.
+     * 
+     * @param firstName Имя студента
+     * @param secondName Фамилия студента
+     * @param age Возраст студента
+     * @param studentID Идентификатор студента
+     */
+    
     public Student(String firstName, String secondName, int age, long studentID) {
         super(firstName, secondName, age);
         this.studentID = studentID;
@@ -12,7 +22,12 @@ public class Student extends User implements Comparable<Student>{
     public long getStudentID() {
         return studentID;
     }
-
+    /**
+     * Устанавливает идентификатор студента.
+     * 
+     * @param studentID Идентификатор студента
+     */
+    
     public void setStudentID(long studentID) {
         this.studentID = studentID;
     }

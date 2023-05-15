@@ -7,11 +7,14 @@ import Controller.iGetView;
 import Model.Student;
 
 /**
- * Класс View для организации вывода, имплементирует поведение из интерфейса
- * iGetView
+ * Класс ViewRU предоставляет функции для вывода данных на русском языке и имплементирует интерфейс iGetView.
  */
 public class ViewRU implements iGetView {
-    // определение метода вывода всех студентов в консоль
+    /**
+     * Выводит всех студентов из списка.
+     *
+     * @param students Список студентов
+     */
     public void printAllStudent(List<Student> students) {
         System.out.println("-----Вывод списка студентов-----");
         for (Student person : students) {
@@ -20,18 +23,26 @@ public class ViewRU implements iGetView {
         System.out.println("-----Конец списка-----");
     }
 
-    // выбор команды
+    /**
+     * Запрашивает у пользователя ввод команды.
+     *
+     * @return Введенная пользователем команда
+     */
     public String prompt() {
         try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Введите команду из списка [LIST,EXIT, DELETE]:");
+            System.out.print("Введите команду из списка [LIST, EXIT, DELETE, READ, CREATE, UPDATE]: ");
             return in.nextLine();
         }
     }
 
-    // запрос id удаляемого студента
+    /**
+     * Запрашивает у пользователя идентификатор студента для удаления.
+     *
+     * @return Идентификатор студента для удаления
+     */
     public Long getStudentIdToDelete() {
         try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Введите id студента, которого хотите удалить:");
+            System.out.print("Введите ID студента, которого хотите удалить: ");
             return (long) in.nextInt();
         }
     }
@@ -53,5 +64,4 @@ public class ViewRU implements iGetView {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getStudentIdToUpdate'");
     }
-
 }
