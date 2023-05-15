@@ -123,10 +123,11 @@ public class ViewEng implements iGetView {
      * @param students Список студентов
      */
     public void displayStudents(List<Student> students) {
-        System.out.println("Student List:");
+        System.out.println("-----Student List-----");
         for (Student student : students) {
             System.out.println(student);
         }
+        System.out.println("-----End of List-----");
     }
 
     /**
@@ -134,25 +135,42 @@ public class ViewEng implements iGetView {
      * 
      * @return Объект студента, введенный пользователем
      */
+    // public Student readStudent() {
+    //     try (Scanner scanner = new Scanner(System.in)) {
+    //         System.out.print("Enter the student's first name: ");
+    //         String firstName = scanner.nextLine();
+    //         System.out.print("Enter the student's last name: ");
+    //         String lastName = scanner.nextLine();
+    //         System.out.print("Enter the student's age: ");
+    //         int age = scanner.nextInt();
+    //         System.out.print("Enter the student's ID: ");
+    //         long id = scanner.nextLong();
+    //         return new Student(firstName, lastName, age, id);
+    //     }
+    // }
     public Student readStudent() {
         System.out.print("Enter the student's first name: ");
-        String firstName = scanner.next();
+        String firstName = scanner.nextLine();
         System.out.print("Enter the student's last name: ");
-        String lastName = scanner.next();
+        String lastName = scanner.nextLine();
         System.out.print("Enter the student's age: ");
         int age = scanner.nextInt();
+        scanner.nextLine(); // Пропустить оставшуюся пустую строку
         System.out.print("Enter the student's ID: ");
         long id = scanner.nextLong();
+        scanner.nextLine(); // Пропустить оставшуюся пустую строку
         return new Student(firstName, lastName, age, id);
     }
-
+  
     /**
      * Получает идентификатор студента для обновления.
      * 
      * @return Идентификатор студента для обновления
      */
     public Long getStudentIdToUpdate() {
-        System.out.print("Enter the ID of the student to update: ");
-        return scanner.nextLong();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter the ID of the student to update: ");
+            return scanner.nextLong();
+        }
     }
 }

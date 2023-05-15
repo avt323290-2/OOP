@@ -20,7 +20,7 @@ public class ModelHash implements iGetModel {
     public ModelHash(HashMap<Long, Student> students) {
         this.students = students;
     }
-
+  
     /**
      * Возвращает список всех студентов.
      * 
@@ -59,7 +59,7 @@ public class ModelHash implements iGetModel {
         if (students.containsKey(student.getId())) {
             return false; // Студент с таким идентификатором уже существует
         } else {
-            students.put(student.getId(), student);
+            students.put((Long) student.getId(), student);
             return true; // Студент успешно создан
         }
     }
@@ -81,7 +81,6 @@ public class ModelHash implements iGetModel {
 
     @Override
     public List<Student> getAllStudent() {
-        // TODO: Implement this method
-        throw new UnsupportedOperationException("Unimplemented method 'getAllStudent'");
+        return getAllStudents();
     }
 }

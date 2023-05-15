@@ -10,6 +10,12 @@ import Model.Student;
  * Класс ViewRU предоставляет функции для вывода данных на русском языке и имплементирует интерфейс iGetView.
  */
 public class ViewRU implements iGetView {
+    private Scanner scanner;
+
+    public ViewRU() {
+        scanner = new Scanner(System.in);
+    }
+
     /**
      * Выводит всех студентов из списка.
      *
@@ -29,10 +35,8 @@ public class ViewRU implements iGetView {
      * @return Введенная пользователем команда
      */
     public String prompt() {
-        try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Введите команду из списка [LIST, EXIT, DELETE, READ, CREATE, UPDATE]: ");
-            return in.nextLine();
-        }
+        System.out.print("Введите команду из списка [LIST, EXIT, DELETE, READ, CREATE, UPDATE]: ");
+        return scanner.nextLine();
     }
 
     /**
@@ -41,27 +45,37 @@ public class ViewRU implements iGetView {
      * @return Идентификатор студента для удаления
      */
     public Long getStudentIdToDelete() {
-        try (Scanner in = new Scanner(System.in)) {
-            System.out.print("Введите ID студента, которого хотите удалить: ");
-            return (long) in.nextInt();
-        }
+        System.out.print("Введите ID студента, которого хотите удалить: ");
+        return scanner.nextLong();
     }
 
     @Override
     public void displayStudents(List<Student> students) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'displayStudents'");
+        System.out.println("-----Список студентов-----");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println("-----Конец списка-----");
     }
 
     @Override
     public Student readStudent() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'readStudent'");
+        System.out.print("Введите имя студента: ");
+        String firstName = scanner.nextLine();
+        System.out.print("Введите фамилию студента: ");
+        String lastName = scanner.nextLine();
+        System.out.print("Введите возраст студента: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Пропустить оставшуюся пустую строку
+        System.out.print("Введите ID студента: ");
+        long id = scanner.nextLong();
+        scanner.nextLine(); // Пропустить оставшуюся пустую строку
+        return new Student(firstName, lastName, age, id);
     }
 
     @Override
     public Long getStudentIdToUpdate() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getStudentIdToUpdate'");
+        System.out.print("Введите ID студента для обновления: ");
+        return scanner.nextLong();
     }
 }
