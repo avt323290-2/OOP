@@ -102,3 +102,4 @@ public class Cube implements TwoDimensionalShape {
         return 6 * edge * edge;
     }
 }
+
