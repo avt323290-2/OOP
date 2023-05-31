@@ -10,7 +10,7 @@ import Ex003Math.Mathematics.Shapes.Shape;
 public class Program {
     public static void main(String[] args) throws UnacceptableValueException {
 
-        new App().start();
+        new Main().start();
 
         // #region
 
