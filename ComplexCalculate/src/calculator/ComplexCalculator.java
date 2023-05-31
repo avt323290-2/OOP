@@ -3,9 +3,17 @@ package calculator;
 import complex.ComplexNumber;
 import logger.Logger;
 
+/**
+ * Реализация калькулятора для работы с комплексными числами.
+ */
 public class ComplexCalculator implements Calculator {
     private Logger logger;
 
+    /**
+     * Создает экземпляр калькулятора комплексных чисел с указанным логгером.
+     *
+     * @param logger Логгер для записи логов операций калькулятора.
+     */
     public ComplexCalculator(Logger logger) {
         this.logger = logger;
     }
